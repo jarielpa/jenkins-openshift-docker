@@ -14,14 +14,15 @@ RUN yum clean all && \
     rpm -V $INSTALL_PKGS && \
     yum clean all
 
-USER 1001
+
 # Install Maven
 RUN curl -sL -o /tmp/maven.tar.gz \
       https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/${MAVEN_VERSION}/apache-maven-${MAVEN_VERSION}-bin.tar.gz
-RUN mkdir -p /var/lib/jenkins/tools && \
-    cd /var/lib/jenkins/tools && \
+    
+RUN mkdir -p /opt/tools && \
+    cd /opt/tools && \
     tar xfz /tmp/maven.tar.gz && \
-    mv /var/lib/jenkins/tools/apache-maven-${MAVEN_VERSION} /var/lib/jenkins/tools/maven
-# && \
-#    chown -R 1001:0 /var/lib/jenkins/tools
+    mv /opt/tools/apache-maven-${MAVEN_VERSION} /opt/tools/maven && \
+    chown -R 1001:0 /opt/tools
 
+USER 1001
