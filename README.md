@@ -1,5 +1,7 @@
 # jenkins-openshift-docker
 
+This is a standalone Jenkins master, i.e. maven and jdk 8 are installed so it can build maven projects without slaves.
+
 oc new-app -e JENKINS_PASSWORD=<password> jalammas/jenkins-openshift-docker
 
 ## In case of "manifest unknown# - error:
