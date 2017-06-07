@@ -1,39 +1,14 @@
 apiVersion: v1
 kind: Template
-metadata:
-  name: cicd-jenkins-std-persistent
 labels:
   template: cicd-jenkins-std-persistent
-  group: cicd
+  group: pie
 metadata:
   annotations:
     description: Creates the CI/CD infrastructure with Jenkins
     iconClass: icon-jenkins
-    tags: instant-app,jenkins
+    tags: instant-app,jenkins,pie
   name: cicd-jenkins-std-persistent
-parameters:
-- description: Jenkins Docker image to use.
-  displayName: Jenkins Docker image
-  name: JENKINS_IMAGE
-  value: jalammas/jenkins-openshift-docker
-- description: Jenkins service name.
-  displayName: Jenkins Service Name
-  name: JENKINS_SERVICE_NAME
-  value: jenkins-std
-- description: Password for the Jenkins user.
-  displayName: Jenkins Password
-  generate: expression
-  name: JENKINS_PASSWORD
-  value: password
-- description: Maximum amount of memory the container can use.
-  displayName: Memory Limit
-  name: MEMORY_LIMIT
-  value: 512Mi
-- description: Volume space available for data, e.g. 512Mi, 2Gi.
-  displayName: Volume Capacity
-  name: VOLUME_CAPACITY
-  required: true
-  value: 1Gi
 objects:
 # Jenkins 
 - apiVersion: v1
@@ -120,4 +95,26 @@ objects:
     test: false
     triggers:
     - type: ConfigChange
-
+parameters:
+- description: Jenkins Docker image to use.
+  displayName: Jenkins Docker image
+  name: JENKINS_IMAGE
+  value: jalammas/jenkins-openshift-docker
+- description: Jenkins service name.
+  displayName: Jenkins Service Name
+  name: JENKINS_SERVICE_NAME
+  value: jenkins-std
+- description: Password for the Jenkins user.
+  displayName: Jenkins Password
+  generate: expression
+  name: JENKINS_PASSWORD
+  value: password
+- description: Maximum amount of memory the container can use.
+  displayName: Memory Limit
+  name: MEMORY_LIMIT
+  value: 512Mi
+- description: Volume space available for data, e.g. 512Mi, 2Gi.
+  displayName: Volume Capacity
+  name: VOLUME_CAPACITY
+  required: true
+  value: 1Gi
