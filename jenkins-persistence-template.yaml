@@ -99,7 +99,7 @@ parameters:
 - description: Jenkins Docker image to use.
   displayName: Jenkins Docker image
   name: JENKINS_IMAGE
-  value: jalammas/jenkins-openshift-docker
+  value: jalammas/jenkins-openshift-docker:latest
 - description: Jenkins service name.
   displayName: Jenkins Service Name
   name: JENKINS_SERVICE_NAME

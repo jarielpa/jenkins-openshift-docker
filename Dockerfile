@@ -4,6 +4,9 @@ USER root
 
 ENV MAVEN_VERSION 3.3.9
 
+
+COPY ./configuration /opt/openshift/configuration
+
 # Install Maven
 RUN curl -sL -o /tmp/maven.tar.gz \
       https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/${MAVEN_VERSION}/apache-maven-${MAVEN_VERSION}-bin.tar.gz
