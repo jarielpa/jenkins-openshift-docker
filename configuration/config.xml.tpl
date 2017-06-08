@@ -30,7 +30,7 @@
   <disableRememberMe>false</disableRememberMe>
   <workspaceDir>${ITEM_ROOTDIR}/workspace</workspaceDir>
   <buildsDir>${ITEM_ROOTDIR}/builds</buildsDir>
-   <jdks>
+    <jdks>
     <jdk>
       <name>JDK-8</name>
       <home>/usr/lib/jvm/java-1.8.0</home>
