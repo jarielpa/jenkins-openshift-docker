@@ -1,9 +1,9 @@
-# jenkins-openshift-docker
+# Jenkins for OpenShift
 
 This is a standalone Jenkins master, i.e. maven and jdk 8 are installed so it can build maven projects without slaves.
 Image is based on openshift/jenkins-2-centos7
 
-Install:
+# Install
 
 Install with OpenShift Jenkins template:
 
